@@ -2,7 +2,6 @@ version: "3"
 services:
     jenkins:
         image: jenkins/jenkins:lts
-        container_name: jenkins
         ports:
             - "8080:8080"
             - "5000:5000"
@@ -11,7 +10,10 @@ services:
 
     visualizer:
         image: visualizer-arm:latest
-        container_name: visualizer
+        deploy:
+              placement:
+                  constraints:
+                      - node.role == manager
         ports:
             - "8000:8080"
         volumes:
