@@ -10,7 +10,7 @@ services:
             - jenkins_home:/var/jenkins_home
 
     visualizer:
-        image: dockersamples/visualizer
+        image: visualizer-arm:latest
         container_name: visualizer
         ports:
             - "8000:8080"
