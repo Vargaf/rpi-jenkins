@@ -9,7 +9,7 @@ services:
             - jenkins_home:/var/jenkins_home
 
     visualizer:
-        image: visualizer-arm:latest
+        image: alexellis2/visualizer-arm
         deploy:
               placement:
                   constraints:
