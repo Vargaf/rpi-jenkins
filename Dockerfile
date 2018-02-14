@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi-openjdk
+FROM openjdk:8-jdk
 
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
@@ -11,6 +11,7 @@ ARG agent_port=50000
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
+ENV JAVA_OPTS="-Djava.io.tmpdir=/var/jenkins_home/tmp"
 
 # Jenkins is run with user `jenkins`, uid = 1000
 # If you bind mount a volume from the host or a data container,
