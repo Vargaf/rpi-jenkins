@@ -1,9 +1,8 @@
 version: "3"
 services:
     jenkins:
-        build:
-            context: ./
-            dockerfile: Dockerfile
+        #docker build -t jenkins/jenkins:lts https://github.com/jenkinsci/docker.git
+        image: jenkins/jenkins:lts
         deploy:
             replicas: 1
         ports:
