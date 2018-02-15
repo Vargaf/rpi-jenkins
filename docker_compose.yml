@@ -2,7 +2,7 @@ version: "3"
 services:
     jenkins:
         #docker build -t jenkins/jenkins:lts https://github.com/jenkinsci/docker.git
-        image: jenkins/jenkins:lts
+        image: rpi-jenkins:latest
         deploy:
             replicas: 1
         ports:
