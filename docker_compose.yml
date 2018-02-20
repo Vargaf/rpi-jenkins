@@ -20,7 +20,17 @@ services:
         ports:
             - "8000:8080"
         volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
+            - /var/run/docker.sock:/var/run/docker.sock
+
+    cdmon:
+        container_name: cdmon
+        image: pferraris/docker-cdmon
+        restart: always
+        environment:
+            CDMON_DOMAIN: warcommands.com
+            CDMON_USERNAME: vargaf68
+            CDMON_PASSWORD: 6e8db8fbca9b07d0c753ccca017a4a6d
+            CDMON_INTERVAL: 1800000
 
 volumes:
     jenkins_home:
